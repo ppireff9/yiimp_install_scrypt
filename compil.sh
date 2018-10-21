@@ -68,12 +68,12 @@ if [ -f autogen.sh ]; then
 		output " "
 else
         cd src
-	
+fi
 if [ -f rpcrawtransaction.cpp ]; then
 
 	sudo sed -i 's/<const\ CScriptID\&/<CScriptID/' rpcrawtransaction.cpp
 	sudo sed -i 's/<CScriptID&>/<CScriptID>/g' rpcrawtransaction.cpp
-	
+fi
 if [[ ! -e 'obj' ]]; then
 	output " "
 	output "Creation directory obj"
@@ -100,4 +100,4 @@ sudo make -f makefile.unix
 output " "
 output "$coin finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
 output " "
-fi
+
